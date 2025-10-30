@@ -1,0 +1,45 @@
+name: ukm_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+assets:
+    # Mendaftarkan seluruh folder font
+    - assets/font/
+
+fonts:
+  - family: Geist
+    fonts:
+      - asset: assets/font/Geist-Thin.ttf
+        weight: 100                 # Sangat tipis
+      - asset: assets/font/Geist-ExtraLight.ttf
+        weight: 200                 # Ekstra Tipis
+      - asset: assets/font/Geist-Light.ttf
+        weight: 300                 # Tipis
+      - asset: assets/font/Geist-Regular.ttf
+        weight: 400                 # Regular/Normal (default)
+      - asset: assets/font/Geist-Medium.ttf
+        weight: 500                 # Medium
+      - asset: assets/font/Geist-SemiBold.ttf
+        weight: 600                 # Semi-Bold
+      - asset: assets/font/Geist-Bold.ttf
+        weight: 700                 # Bold
+      - asset: assets/font/Geist-ExtraBold.ttf
+        weight: 800                 # Ekstra Bold
+      - asset: assets/font/Geist-Black.ttf
+        weight: 900                 # Paling Tebal
