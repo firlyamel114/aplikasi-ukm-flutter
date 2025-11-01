@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'organisasi_ortom_page.dart';
+import 'organisasi_aslab_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -171,7 +172,14 @@ class _DashboardPageState extends State<DashboardPage> {
           _buildHoverableCategory(
             label: 'Aslab',
             icon: Icons.science,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+              MaterialPageRoute(
+                builder: (context) => const AslabPage()
+                )
+              );
+            },
             id: 'aslab',
           ),
         ],
