@@ -74,12 +74,17 @@ class _AslabPageState extends State<AslabPage> {
                       ),
                     ],
                     border: Border.all(
-                      color: isHovered ? Colors.blue.shade200 : Colors.grey.shade300,
+                      color: isHovered
+                          ? Colors.blue.shade200
+                          : Colors.grey.shade300,
                     ),
                   ),
                   child: Row(
                     children: [
-                      const CircleAvatar(radius: 20, backgroundColor: Colors.grey),
+                      const CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.grey,
+                      ),
                       const SizedBox(width: 16),
                       Expanded(
                         child: Column(
