@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ukm_app/aslab_detail_page.dart';
 import 'ortom_detail_page.dart';
 
-class AslabPage extends StatefulWidget {
-  const AslabPage({super.key});
+class OrganisasiAslabPage extends StatefulWidget {
+  const OrganisasiAslabPage({super.key});
 
   @override
-  State<AslabPage> createState() => _AslabPageState();
+  State<OrganisasiAslabPage> createState() => _OrganisasiAslabPageState();
 }
 
-class _AslabPageState extends State<AslabPage> {
+class _OrganisasiAslabPageState extends State<OrganisasiAslabPage> {
   String _hoveredCard = '';
 
   final List<Map<String, String>> ortomList = [
