@@ -1,59 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:ukm_app/aslab_detail_page.dart';
-import 'ortom_detail_page.dart';
+import 'internal_detail_page.dart';
 
-class AslabPage extends StatefulWidget {
-  const AslabPage({super.key});
+class InternalPage extends StatefulWidget {
+  const InternalPage({super.key});
 
   @override
-  State<AslabPage> createState() => _AslabPageState();
+  State<InternalPage> createState() => _InternalPageState();
 }
 
-class _AslabPageState extends State<AslabPage> {
+class _InternalPageState extends State<InternalPage> {
   String _hoveredCard = '';
 
-  final List<Map<String, String>> ortomList = [
+  final List<Map<String, String>> internalList = [
     {
-      'title': 'Aslab Teknik Elektro',
+      'title': 'Himpunan Mahasiswa Teknologi Pangan',
       'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+          'HIMA berperan sebagai jembatan komunikasi antara mahasiswa dan pihak dosen/departemen, serta aktif menyelenggarakan kegiatan akademik maupun non-akademik, seperti seminar, pelatihan, dan kegiatan sosial, yang bertujuan memperkaya wawasan keilmuan dan mempererat tali persaudaraan antar anggota.',
+      'logoPath': 'assets/logos/himatekpang.jpeg',
     },
     {
-      'title': 'Aslab Informatika',
+      'title': 'UKM Teater Gedhek',
       'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/aslab.png',
+          'Unit Kegiatan Mahasiswa (UKM) merupakan wadah bagi mahasiswa yang ingin meningkatkan minat dan bakat yang dimiliki guna mengembangkan potensi diri, memperluas wawasan, memperoleh pengalaman berorganisasi, dan berkontribusi secara positif kepada masyarakat dan kampus.',
+      'logoPath': 'assets/logos/teater.jpeg',
     },
     {
-      'title': 'Aslab Teknik Mesin',
+      'title': 'Ikatan Band Mahasiswa UMSIDA',
       'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
-    },
-    {
-      'title': 'Aslab Teknik Industri',
-      'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
-    },
-    {
-      'title': 'Aslab Agroteknologi',
-      'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
-    },
-    {
-      'title': 'Aslab Teknologi Pangan',
-      'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
-    },
-    {
-      'title': 'Aslab Teknik Sipil',
-      'subtitle':
-          'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+          'Unit Kegiatan Mahasiswa (UKM) merupakan wadah bagi mahasiswa yang ingin meningkatkan minat dan bakat yang dimiliki guna mengembangkan potensi diri, memperluas wawasan, memperoleh pengalaman berorganisasi, dan berkontribusi secara positif kepada masyarakat dan kampus.',
+      'logoPath': 'assets/logos/ikabama.png',
     },
   ];
 
@@ -62,7 +37,7 @@ class _AslabPageState extends State<AslabPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Asisten Laboratorium UMSIDA',
+          'Organisasi Internal dan UKM UMSIDA',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
@@ -76,9 +51,9 @@ class _AslabPageState extends State<AslabPage> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView.builder(
-          itemCount: ortomList.length,
+          itemCount: internalList.length,
           itemBuilder: (context, index) {
-            final item = ortomList[index];
+            final item = internalList[index];
             final isHovered = _hoveredCard == item['title'];
 
             return MouseRegion(
@@ -145,7 +120,7 @@ class _AslabPageState extends State<AslabPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AslabDetailPage(
+                                  builder: (context) => InternalDetailPage(
                                     title: item['title']!,
                                     logoPath: item['logoPath']!,
                                   ),
