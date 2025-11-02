@@ -183,7 +183,9 @@ class _DashboardPageState extends State<DashboardPage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AslabPage()),
+                MaterialPageRoute(
+                  builder: (context) => const OrganisasiAslabPage(),
+                ),
               );
             },
             id: 'aslab',
