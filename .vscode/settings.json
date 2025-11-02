@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/HP/aplikasi-ukm-flutter/windows/flutter"
+    "cmake.sourceDirectory": "C:/Users/HP/aplikasi-ukm-flutter/windows/flutter",
+    "cmake.ignoreCMakeListsMissing": true
 }

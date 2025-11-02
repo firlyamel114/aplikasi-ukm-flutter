@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ukm_app/internal_detail_page.dart';
 import 'organisasi_ortom_page.dart';
 import 'organisasi_aslab_page.dart';
+import 'organisasi_internal_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -104,10 +106,12 @@ class _DashboardPageState extends State<DashboardPage> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
         children: <Widget>[
-          Expanded(flex: 1, child: _buildStatCard('Organisasi Internal', '12')),
+          Expanded(flex: 1, child: _buildStatCard('Internal & UKM', '10')),
           const SizedBox(width: 0),
 
-          Expanded(flex: 1, child: _buildStatCard('Ortom', '5')),
+          Expanded(flex: 1, child: _buildStatCard('Ortom', '3')),
+
+          Expanded(flex: 1, child: _buildStatCard('Aslab', '5')),
         ],
       ),
     );
@@ -148,7 +152,12 @@ class _DashboardPageState extends State<DashboardPage> {
           _buildHoverableCategory(
             label: 'Internal',
             icon: Icons.account_balance,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const InternalPage()),
+              );
+            },
             id: 'internal',
           ),
 
@@ -174,9 +183,7 @@ class _DashboardPageState extends State<DashboardPage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const OrganisasiAslabPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const AslabPage()),
               );
             },
             id: 'aslab',

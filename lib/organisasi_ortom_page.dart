@@ -59,7 +59,7 @@ class _OrganisasiOrtomPageState extends State<OrganisasiOrtomPage> {
             return MouseRegion(
               onEnter: (_) => setState(() => _hoveredCard = item['title']!),
               onExit: (_) => setState(() => _hoveredCard = ''),
-              // --- GestureDetector SUDAH DIHAPUS ---
+             
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 150),
                 margin: const EdgeInsets.symmetric(vertical: 8),
