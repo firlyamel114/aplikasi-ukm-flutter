@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
       title: 'Aplikasi Kegiatan Mahasiswa',
       theme: ThemeData(fontFamily: 'Geist'),
       home: DashboardPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-
