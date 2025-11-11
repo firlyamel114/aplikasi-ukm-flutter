@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ukm_app/internal_detail_page.dart';
 import 'organisasi_ortom_page.dart';
 import 'organisasi_aslab_page.dart';
 import 'organisasi_internal_page.dart';
+
+// Palette for a brighter, cohesive dashboard
+const Color _kBackgroundColor = Color(0xFFEFF6FF); // very light blue
+const Color _kPrimary = Color(0xFF4F46E5); // indigo-600
+const Color _kAccent = Color(0xFF06B6D4); // teal-500
+const Color _kHeadingColor = Color(0xFF0F172A); // slate-900
+const Color _kMuted = Color(0xFF475569); // slate-600
+
+const Color _kCardPrimary = Color(0xFFECEBFF); // pale indigo
+const Color _kCardSecondary = Color(0xFFE0F7FA); // pale teal
+const Color _kCardTertiary = Color(0xFFFFF1E6); // pale warm
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -18,7 +28,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+      backgroundColor: _kBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +52,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Geist',
-                  color: Colors.grey.shade800,
+                  color: _kHeadingColor,
                 ),
               ),
             ),
@@ -81,12 +91,12 @@ class _DashboardPageState extends State<DashboardPage> {
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade800,
+                  color: _kHeadingColor,
                 ),
               ),
-              const Text(
+              Text(
                 'Muhammad Vilary Bustomy',
-                style: TextStyle(color: Colors.grey, fontSize: 16),
+                style: TextStyle(color: _kMuted, fontSize: 16),
               ),
             ],
           ),
@@ -94,12 +104,13 @@ class _DashboardPageState extends State<DashboardPage> {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(width: 1.5, color: Colors.grey.shade400),
+              border: Border.all(width: 1.5, color: _kPrimary.withOpacity(0.6)),
+              color: Colors.white,
             ),
             child: Icon(
               Icons.person_outline,
               size: 28,
-              color: Colors.grey.shade700,
+              color: _kPrimary,
             ),
           ),
         ],
@@ -117,7 +128,7 @@ class _DashboardPageState extends State<DashboardPage> {
             child: _buildStatCard(
               'Internal',
               '10',
-              Colors.pink.shade100,
+              _kCardPrimary,
               Icons.people_alt_outlined,
             ),
           ),
@@ -128,7 +139,7 @@ class _DashboardPageState extends State<DashboardPage> {
             child: _buildStatCard(
               'Ortom',
               '3',
-              Colors.purple.shade100,
+              _kCardSecondary,
               Icons.school_outlined,
             ),
           ),
@@ -139,7 +150,7 @@ class _DashboardPageState extends State<DashboardPage> {
             child: _buildStatCard(
               'Aslab',
               '5',
-              Colors.green.shade100,
+              _kCardTertiary,
               Icons.science_outlined,
             ),
           ),
@@ -158,21 +169,21 @@ class _DashboardPageState extends State<DashboardPage> {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
-        side: BorderSide(color: Colors.grey.shade200, width: 1),
+        side: BorderSide(color: _kPrimary.withOpacity(0.12), width: 1),
       ),
       color: bgColor,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            Icon(icon, size: 30, color: Colors.grey.shade700),
+            Icon(icon, size: 30, color: _kPrimary),
             const SizedBox(height: 10),
             Text(
               count,
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey.shade800,
+                color: _kHeadingColor,
                 fontFamily: 'Geist',
               ),
             ),
@@ -180,7 +191,7 @@ class _DashboardPageState extends State<DashboardPage> {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+              style: TextStyle(color: _kMuted, fontSize: 13),
             ),
           ],
         ),
@@ -263,23 +274,23 @@ class _DashboardPageState extends State<DashboardPage> {
               padding: const EdgeInsets.all(12),
               width: 70,
               height: 70,
-              decoration: BoxDecoration(
+                decoration: BoxDecoration(
                 color: isClicked
-                    ? Colors.blue.shade100
+                    ? _kCardPrimary
                     : isHovered
-                    ? Colors.blue.shade50
+                    ? _kCardSecondary
                     : Colors.white,
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(
                   color: isHovered
-                      ? Colors.blue.shade300
+                      ? _kPrimary.withOpacity(0.6)
                       : Colors.grey.shade300,
                   width: 1,
                 ),
                 boxShadow: isClicked
                     ? [
                         BoxShadow(
-                          color: Colors.blue.withOpacity(0.1),
+                          color: _kPrimary.withOpacity(0.08),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -289,7 +300,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Icon(
                 icon,
                 size: 32,
-                color: isHovered ? Colors.blue.shade600 : Colors.grey.shade700,
+                color: isHovered ? _kPrimary : _kMuted,
               ),
             ),
             const SizedBox(height: 8),
@@ -299,7 +310,7 @@ class _DashboardPageState extends State<DashboardPage> {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: isHovered ? Colors.blue.shade600 : Colors.grey.shade700,
+                color: isHovered ? _kPrimary : _kMuted,
                 fontFamily: 'Geist',
               ),
               child: Text(label),
@@ -313,22 +324,22 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget _buildDeskripsiUmum(String title, String description) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Card(
+        child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
-          side: BorderSide(color: Colors.grey.shade200, width: 1),
+          side: BorderSide(color: _kPrimary.withOpacity(0.08), width: 1),
         ),
         color: Colors.white,
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          collapsedIconColor: Colors.grey.shade600,
-          iconColor: Colors.blue.shade400,
+          collapsedIconColor: _kMuted,
+          iconColor: _kPrimary,
           title: Text(
             title,
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.grey.shade800,
+              color: _kHeadingColor,
               fontSize: 15,
             ),
           ),
@@ -338,7 +349,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Text(
                 description,
                 style: TextStyle(
-                  color: Colors.grey.shade600,
+                  color: _kMuted,
                   fontSize: 14,
                   height: 1.5,
                 ),
