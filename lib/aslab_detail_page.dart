@@ -1,4 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+// Page typography using Google Fonts
+final TextStyle _kTitleStyle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w700,
+  fontSize: 22,
+);
+
+final TextStyle _kSectionTitleStyle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w600,
+  fontSize: 18,
+);
+
+final TextStyle _kButtonTextStyle = GoogleFonts.poppins(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+);
+
+final TextStyle _kBodyStyle = GoogleFonts.openSans(
+  fontSize: 14,
+  height: 1.5,
+  color: const Color(0xFF616161), // approx Colors.grey.shade700
+);
 
 class AslabDetailPage extends StatelessWidget {
   final String title;
@@ -55,11 +78,7 @@ class AslabDetailPage extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            fontFamily: 'Geist',
-                          ),
+                          style: _kTitleStyle,
                         ),
                         const SizedBox(height: 8),
                         ElevatedButton(
@@ -93,6 +112,7 @@ class AslabDetailPage extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
+                            textStyle: _kButtonTextStyle,
                           ),
                           child: const Text('Daftar sekarang'),
                         ),
@@ -104,13 +124,9 @@ class AslabDetailPage extends StatelessWidget {
               const SizedBox(height: 24),
 
               // --- Bagian Deskripsi ---
-              const Text(
+              Text(
                 'Deskripsi',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                  fontFamily: 'Geist',
-                ),
+                style: _kSectionTitleStyle,
               ),
               const SizedBox(height: 8),
               Container(
@@ -122,24 +138,15 @@ class AslabDetailPage extends StatelessWidget {
                 ),
                 child: Text(
                   deskripsi,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey.shade700,
-                    height: 1.5,
-                    fontFamily: 'Geist',
-                  ),
+                  style: _kBodyStyle,
                 ),
               ),
               const SizedBox(height: 24),
 
               // --- Bagian Tugas ---
-              const Text(
+              Text(
                 'Tugas & Tanggung Jawab',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                  fontFamily: 'Geist',
-                ),
+                style: _kSectionTitleStyle,
               ),
               const SizedBox(height: 8),
               Container(
@@ -151,12 +158,7 @@ class AslabDetailPage extends StatelessWidget {
                 ),
                 child: Text(
                   tugas,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey.shade700,
-                    height: 1.5,
-                    fontFamily: 'Geist',
-                  ),
+                  style: _kBodyStyle,
                 ),
               ),
             ],

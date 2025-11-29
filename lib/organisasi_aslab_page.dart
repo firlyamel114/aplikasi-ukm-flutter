@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ukm_app/aslab_detail_page.dart';
-import 'ortom_detail_page.dart';
 
 class OrganisasiAslabPage extends StatefulWidget {
   const OrganisasiAslabPage({super.key});
@@ -29,31 +28,31 @@ class _OrganisasiAslabPageState extends State<OrganisasiAslabPage> {
       'title': 'Aslab Teknik Mesin',
       'subtitle':
           'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+      'logoPath': 'assets/logos/mesin.jfif',
     },
     {
       'title': 'Aslab Teknik Industri',
       'subtitle':
           'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+  'logoPath': 'assets/logos/hmti.png',
     },
     {
       'title': 'Aslab Agroteknologi',
       'subtitle':
           'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+      'logoPath': 'assets/logos/himagro.jfif',
     },
     {
       'title': 'Aslab Teknologi Pangan',
       'subtitle':
           'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+      'logoPath': 'assets/logos/himatekpang.jpeg',
     },
     {
       'title': 'Aslab Teknik Sipil',
       'subtitle':
           'Asisten Laboratorium yang bertugas memelihara, mendukung, serta membantu kegiatan Akademik dalam lingkungan Laboratorium di Program Studi Informatika UMSIDA',
-      'logoPath': 'assets/logos/elektro.png',
+      'logoPath': 'assets/logos/HW_Umsida.png',
     },
   ];
 
